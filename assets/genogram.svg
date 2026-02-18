@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" style="font-family: 'Playfair Display', serif;">
+<style>.name { font-weight: bold; font-size: 14px; } .dates { font-size: 12px; fill: #555; } rect { fill: #fdfdfd; stroke: #333; stroke-width: 1px; } line { stroke: #333; stroke-width: 1px; }</style>
+<rect x="50" y="50" width="160" height="80" rx="5" /><text x="130.0" y="80" text-anchor="middle" class="name">Jakob Noa Bachrach</text><text x="130.0" y="100" text-anchor="middle" class="dates">1853 - 1934</text>
+<rect x="250" y="50" width="160" height="80" rx="5" /><text x="330.0" y="80" text-anchor="middle" class="name">Auguste G Steinfeld</text><text x="330.0" y="100" text-anchor="middle" class="dates">1857 - 1938</text>
+<line x1="190.0" y1="90.0" x2="270.0" y2="90.0" />
+<rect x="530" y="50" width="160" height="80" rx="5" /><text x="610.0" y="80" text-anchor="middle" class="name">Anschel Baum</text><text x="610.0" y="100" text-anchor="middle" class="dates">1868 - 1938</text>
+<rect x="730" y="50" width="160" height="80" rx="5" /><text x="810.0" y="80" text-anchor="middle" class="name">Lina Grünbaum</text><text x="810.0" y="100" text-anchor="middle" class="dates">1875 - 1949</text>
+<rect x="150.0" y="200" width="160" height="80" rx="5" /><text x="230.0" y="230" text-anchor="middle" class="name">Samuel Bachrach</text><text x="230.0" y="250" text-anchor="middle" class="dates">1890 - 1977</text>
+<rect x="630.0" y="200" width="160" height="80" rx="5" /><text x="710.0" y="230" text-anchor="middle" class="name">Berta Baum</text><text x="710.0" y="250" text-anchor="middle" class="dates">1901 - 1953</text>
+<line x1="230.0" y1="90.0" x2="230.0" y2="200" />
+<line x1="230.0" y1="90.0" x2="230.0" y2="120" />
+<line x1="230.0" y1="120" x2="230.0" y2="200" />
+<line x1="710.0" y1="90.0" x2="710.0" y2="200" />
+<line x1="670.0" y1="90.0" x2="750.0" y2="90.0" />
+<line x1="310.0" y1="240.0" x2="630.0" y2="240.0" stroke-dasharray="4" />
+<rect x="290.0" y="350" width="160" height="80" rx="5" /><text x="370.0" y="380" text-anchor="middle" class="name">Werner Erich Bachrach</text><text x="370.0" y="400" text-anchor="middle" class="dates">1923 - 2011</text>
+<rect x="490.0" y="350" width="160" height="80" rx="5" /><text x="570.0" y="380" text-anchor="middle" class="name">Margot Bachrach</text><text x="570.0" y="400" text-anchor="middle" class="dates">1925 - 2016</text>
+<line x1="470.0" y1="240.0" x2="470.0" y2="330" />
+<line x1="370.0" y1="330" x2="570.0" y2="330" />
+<line x1="370.0" y1="330" x2="370.0" y2="350" />
+<line x1="570.0" y1="330" x2="570.0" y2="350" />
+</svg>

@@ -1,0 +1,507 @@
+:root {
+    --bg-color: #fdfdfd;
+    --text-color: #121212;
+    --accent-color: #900;
+    --secondary-text: #555;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Libre Baskerville', serif;
+    --spacing-unit: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.8;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Ensure vertical scroll is explicit */
+    scroll-behavior: smooth;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+}
+
+/* Header */
+#main-header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url('assets/map_of_hesse_germany_1771350678037.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--secondary-text);
+    margin-top: 1rem;
+}
+
+.scroll-indicator {
+    margin-top: 3rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #555;
+    opacity: 0.8;
+}
+
+.scroll-indicator .arrow {
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Scrollytelling Layout */
+.chapter {
+    position: relative;
+    /* Min height to allow scrolling */
+}
+
+.chapter-content {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Text on left/right? Let's do Text Right, Visual Left often loops nice */
+    /* Actually NYT often does centered text over visual or side-by-side. 
+       Let's do Sidebar Layout: Visual Sticky (Left/Center), Text Scrolling (Right/Over).
+       Common pattern: Visual fills screen, Text matches it.
+    */
+}
+
+/* Desktop: Side by Side */
+@media (min-width: 900px) {
+    .chapter-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .visual-col {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f9f9f9;
+        order: 1;
+        /* Left */
+    }
+
+    .text-col {
+        padding: 4rem;
+        background-color: var(--bg-color);
+        order: 2;
+        /* Right */
+        z-index: 10;
+        min-height: 100vh;
+        /* Ensure there is scrolling */
+    }
+}
+
+/* Visual Styling */
+.visual-container {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.visual-container img,
+.visual-container svg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    position: absolute;
+    /* Stack them */
+    pointer-events: none;
+    /* Prevent clicking invisible images */
+    z-index: 1;
+}
+
+.visual-container img.active,
+.visual-container svg.active {
+    opacity: 1;
+    pointer-events: auto;
+    /* Allow clicking visible images */
+    z-index: 10;
+}
+
+.caption-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.5s;
+    font-family: Arial, sans-serif;
+    z-index: 20;
+    pointer-events: none;
+    /* Prevent blocking clicks if covering */
+}
+
+.visual-container img.active+.caption-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Text Steps */
+.step {
+    margin-bottom: 80vh;
+    /* Space out steps to allow visual to breathe */
+    opacity: 0.3;
+    transition: opacity 0.5s;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step:last-child {
+    margin-bottom: 20vh;
+}
+
+/* Timeline */
+#timeline {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+    mix-blend-mode: multiply;
+    /* Helps it look good on backgrounds */
+}
+
+.timeline-year {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 2px 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    padding-right: 10px;
+}
+
+.timeline-year::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.timeline-year.active {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    /* Large and prominent */
+    font-weight: 700;
+    margin: 10px 0;
+    opacity: 1;
+}
+
+.timeline-year.active::after {
+    background-color: var(--accent-color);
+    width: 10px;
+    height: 10px;
+    right: -7px;
+}
+
+.timeline-year:not(.active) {
+    opacity: 0.5;
+}
+
+.timeline-year:hover {
+    color: #555;
+    opacity: 0.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 899px) {
+    .chapter-content {
+        display: block;
+    }
+
+    .visual-col {
+        position: sticky;
+        top: 0;
+        height: 50vh;
+        z-index: 5;
+    }
+
+    .text-col {
+        position: relative;
+        z-index: 10;
+        padding: 2rem;
+        padding-top: 50vh;
+        /* Push text down to reveal initial visual? Or just flow naturally? */
+        /* Better: Visual sticky top 0, Text flows over it with background */
+        background: transparent;
+        pointer-events: none;
+        /* Allow clicks through empty space */
+        padding-top: 10vh;
+        /* Gap */
+    }
+
+    .step {
+        background: rgba(253, 253, 253, 0.95);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        pointer-events: auto;
+        margin-bottom: 60vh;
+    }
+}
+
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Genogram Mode */
+.lightbox.genogram-mode .lightbox-content {
+    max-width: 98%;
+    /* Expand to just under 100% width */
+    max-height: 98%;
+    width: 98%;
+}
+
+.lightbox.genogram-mode img {
+    background-color: white;
+    /* Solid color background */
+    padding: 20px;
+    /* Optional: add some padding around the genogram */
+    max-height: 90vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 2px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#lightbox-caption {
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #ccc;
+}
+
+/* Make images clickable */
+.scroll-image {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.scroll-image:hover {
+    transform: scale(1.02);
+}
+
+/* Translation Styles */
+.translation-toggle {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    padding: 0;
+    font-family: var(--font-body);
+}
+
+.translation-toggle:hover {
+    color: #b00;
+}
+
+.translation-content {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px;
+    border-radius: 4px;
+    border-left: 2px solid var(--accent-color);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.translation-content.hidden {
+    display: none;
+}
+
+.lightbox-translation {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    max-height: 40vh;
+    overflow-y: auto;
+    text-align: left;
+}
+
+/* Lightbox Navigation */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1002;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-nav.prev {
+    left: 20px;
+}
+
+.lightbox-nav.next {
+    right: 20px;
+}
+
+/* Magnifier Glass */
+.magnifier {
+    position: absolute;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor: none;
+    /* Size of the magnifier */
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    display: none;
+    /* Hidden by default */
+    pointer-events: none;
+    /* Let clicks pass through */
+    z-index: 1001;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fallback */
+}
