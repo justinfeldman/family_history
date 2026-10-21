@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3efe6">
+  <meta name="description" content="An interactive five-generation tree of Margot Bachrach and her direct ancestors.">
+  <title>Margot’s Family Tree · Bachrach &amp; Baum Family Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,650&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261020ac">
+  <link rel="stylesheet" href="family-tree.css?v=20261020ac">
+</head>
+<body class="family-tree-page-body">
+  <a class="skip-link" href="#tree">Skip to the family tree</a>
+
+  <header class="site-header" aria-label="Site header">
+    <a class="brand" href="index.html#top" aria-label="Bachrach and Baum Family Archive, home">
+      <span class="brand-mark" aria-hidden="true">B·B</span>
+      <span class="brand-copy">Family Archive</span>
+    </a>
+    <nav class="header-actions" aria-label="Primary navigation">
+      <a class="header-text-link" href="index.html#story">Story</a>
+      <a class="header-text-link" href="index.html#archive">Archive</a>
+      <a class="header-tree-link active" href="family-tree.html" aria-current="page">Family tree</a>
+      <a class="menu-button back-to-story" href="index.html#story">Back to story</a>
+    </nav>
+  </header>
+
+  <main class="family-tree-page" id="tree">
+    <header class="family-tree-page-heading">
+      <div>
+        <p class="eyebrow">Five generations · 31 people</p>
+        <h1>Margot’s direct family tree</h1>
+      </div>
+      <p>Earlier generations appear at the top, with Margot at the bottom. Select a person to open their known birth, marriage, and death details and highlight their path to Margot.</p>
+    </header>
+
+    <section class="pedigree-shell" aria-labelledby="pedigree-title">
+      <div class="pedigree-toolbar">
+        <div>
+          <h2 id="pedigree-title">Direct ancestry</h2>
+          <p>Great-great-grandparents</p>
+        </div>
+        <p class="pedigree-direction"><span aria-hidden="true">↓</span> Margot</p>
+      </div>
+      <div class="pedigree-stage" id="pedigree-stage" role="tree" aria-label="Margot Bachrach and four generations of direct ancestors">
+        <svg class="pedigree-links" id="pedigree-links" aria-hidden="true"></svg>
+      </div>
+    </section>
+
+    <section class="person-details" id="person-details" aria-live="polite" hidden>
+      <button class="person-details-close" id="person-details-close" type="button" aria-label="Close person details">×</button>
+      <div id="person-details-content"></div>
+    </section>
+
+    <p class="family-tree-source-note">The tree follows Margot’s direct ancestry only. Unknown dates and places are marked rather than inferred. Selectable spouse and parent links stay within this direct line, except where a later marriage is listed as a vital event.</p>
+  </main>
+
+  <footer class="site-footer family-tree-footer">
+    <p class="footer-title">Bachrach &amp; Baum Family Archive</p>
+    <p>A living family history assembled from photographs, family testimony, government files, newspapers, and migration records.</p>
+    <a href="index.html#story">Return to the family story →</a>
+  </footer>
+
+  <script src="family-tree.js?v=20261020ad" defer></script>
+</body>
+</html>
