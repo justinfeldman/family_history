@@ -1246,7 +1246,7 @@ h1 {
   color: #292b27;
 }
 
-.archive-section {
+section.archive-section {
   margin-top: 90px;
   padding: clamp(76px, 10vw, 130px) clamp(20px, 5vw, 76px);
   background: #292b27;
@@ -1517,7 +1517,7 @@ dialog::backdrop { background: rgba(25, 23, 20, .68); backdrop-filter: blur(5px)
   .variant-switch { width: 100%; }
   .variant-button { flex: 1; }
   .chapter-next { margin-top: 58px; }
-  .archive-section { padding: 72px 16px; }
+  section.archive-section { padding: 72px 16px; }
   .archive-grid { grid-template-columns: 1fr; }
   .archive-card { min-height: 300px; }
   .archive-card img { height: 210px; }
