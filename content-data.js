@@ -10,9 +10,6 @@ window.contentData = {
           "text": "In the late eighteenth century, Margot’s ancestors lived in the central and northern parts of what is now the German state of Hesse. This region lies in central Germany, around Marburg and Kassel and north and east of Frankfurt. It was a landscape of farming villages, market towns, wooded hills, and small Jewish communities linked by trade, marriage, and religious institutions."
         },
         {
-          "type": "ancestral_atlas"
-        },
-        {
           "type": "text",
           "text": "All of these places lie within modern Germany, but during the ancestors’ lives they belonged to different German states. Most of the northern villages were in Hesse-Kassel, a principality within the Holy Roman Empire. In 1803 its ruler became a prince-elector, and the state became known as Electoral Hesse (<i>Kurhessen</i>). After the Napoleonic interruption, Electoral Hesse joined the German Confederation in 1815 and remained independent until Prussia annexed it in 1866 and incorporated it into the province of Hesse-Nassau. Farther south and east, several family villages belonged to Hesse-Darmstadt, another state within the Holy Roman Empire. It became the Grand Duchy of Hesse in 1806, joined the German Confederation in 1815, and entered the German Empire as a member state in 1871, retaining its own government until 1918."
         },
@@ -124,13 +121,13 @@ window.contentData = {
             "assets/Baum home in Wittelsberg 2.jpg"
           ],
           "captions": [
-            "The Baum family farmhouse at Hirtenwiesenstraße 1 in Wittelsberg, the modern address of house no. 33 (recent Apple Maps image).",
+            "The Baum family farmhouse at Wittelsberg house no. 33, identified in Kaiser’s chronicle as Moischter Straße 6 (recent Apple Maps image).",
             "A closer view of the Baum family farmhouse."
           ]
         },
         {
           "type": "text",
-          "text": "Baums were long-established in Wittelsberg (arriving in the mid 1700s at latest). There were fewer than two-dozen Jews in the village at its peak, many or most of whom were part of the Baum family. Most of the Baums lived in a large farmhouse that had been in the family since at least the 1800s and, by the 1900s, had 13 rooms and a small stable for cows and horses."
+          "text": "Baum family records reach back into eighteenth-century Wittelsberg, although the earliest parent–child links remain tentative. Kaiser’s chronicle places Isaak Baum in house no. 33 in 1832; it does not establish uninterrupted family ownership from the eighteenth century. By the early twentieth century, the family farmhouse reportedly had 13 rooms and a small stable for cows and horses."
         },
         {
           "type": "image_placeholder",
@@ -149,7 +146,7 @@ window.contentData = {
         },
         {
           "type": "text",
-            "text": "The memorial plaque grew out of a revealing dispute over belonging. Jewish residents had contributed toward a common village war memorial, but the Protestant pastor insisted that it stand in front of the church. Jewish community leader Juda Rülf objected that a memorial shared by the whole village belonged in public space; if it remained at the church, he said, the Jewish contributions should be returned. The pastor prevailed, so the Jewish community commissioned its own marble plaque and mounted it inside the synagogue. It names six fallen men, including Theodor and Hermann Baum of Wittelsberg, relatives of Anschel."
+          "text": "The memorial plaque grew out of a revealing dispute over belonging. Jewish residents had contributed toward a common village war memorial, but the Protestant pastor insisted that it stand in front of the church. Jewish community leader Juda Rülf objected that a memorial shared by the whole village belonged in public space; if it remained at the church, he said, the Jewish contributions should be returned. The pastor prevailed, so the Jewish community commissioned its own marble plaque and mounted it inside the synagogue. It names six fallen men, including Theodor and Hermann Baum of Wittelsberg, relatives of Anschel."
         },
         {
           "type": "text",
@@ -284,7 +281,7 @@ window.contentData = {
       "content": [
         {
           "type": "text",
-          "text": "In 1934, Werner, Bertha, and their daughter Margot returned to Kassel. Samuel's mother, Gustel, also joined the family in Kassel after Samuel's father, Jakob, died that same year in a hospital near Frielendorf. They moved into a different apartment in downtown Kassel, perhaps to accommodate Gustel."
+          "text": "In 1934, Werner, Bertha, and their daughter Margot returned to Kassel. Samuel’s mother, Gustel, also joined the family after Jakob’s death. The family sheet dates his death to 1934, while a compiled genealogy gives 1930; the original register is still needed to settle the year. They moved into a different apartment in downtown Kassel, perhaps to accommodate Gustel."
         },
         {
           "type": "text",
@@ -334,7 +331,7 @@ window.contentData = {
         },
         {
           "type": "text",
-          "text": "She was excited by the prospect of reuniting with her grandparents in the US, and likely would have preferred to live with them upon arrival. However, her mother believed the responsibility would be too great for the older couple, deciding instead that Margot should be raised alongside her cousins. Frieda's family appears to have recently moved one block, from 408 St. Johns Place to 487 Lincoln Place, making 487 Lincoln Place Margot's first home in Brooklyn. Her ship manifest reflects some uncertainty about her destination: 408 St. Johns Place was entered first, then crossed out and replaced with 427 St. Johns Place, her grandparents' address. The 1936 Brooklyn telephone directory lists Frieda's family at 794 Washington Avenue, in an apartment above the storefront that is now Shane's restaurant. Her grandparents remained nearby at 427 St. Johns Place, ensuring they would remain a presence in her life."
+          "text": "She was excited by the prospect of reuniting with her grandparents in the US, and likely would have preferred to live with them upon arrival. However, her mother believed the responsibility would be too great for the older couple, deciding instead that Margot should be raised alongside her cousins. Margot lived with Frieda’s family at 794 Washington Avenue, in the apartment above what is now Café Shane. The 1936 Brooklyn telephone directory lists Frieda’s family there. On Margot’s ship manifest, 408 St. Johns Place was crossed out and replaced with 427 St. Johns Place, her grandparents’ address. Her grandparents remained nearby at 427 St. Johns Place, ensuring they would remain a presence in her life."
         },
         {
           "type": "text",
@@ -353,16 +350,6 @@ window.contentData = {
         {
           "type": "text",
           "text": "During the 8-day journey, Margot recalled playing with the other children on board. She also remembered antisemitic comments that the governess made towards her: She offered to sell Margot some balloons, then quipped to a coworker that Margot wouldn't pay because she was Jewish, implying she was cheap."
-        },
-        {
-          "type": "image_placeholder",
-          "text": "[Photograph of 487 Lincoln Place, Margot's first home in Brooklyn]",
-          "image_files": [
-            "assets/487 Lincoln Place.png"
-          ],
-          "captions": [
-            "487 Lincoln Place, Margot's first home in Brooklyn."
-          ]
         },
         {
           "type": "text",
@@ -546,10 +533,10 @@ window.contentData = {
           "type": "image_placeholder",
           "text": "[Graphic: Bertha and Paul wedding announcement published in Aufbau, a German Jewish magazine published in New York]",
           "image_files": [
-            "assets/Bertha Paul wedding announcement Aufbau.png"
+            "assets/Bertha Paul wedding announcement Aufbau-upscaled.png"
           ],
           "captions": [
-            "Wedding announcement for Bertha and Paul Lowenger in 'Aufbau', a German-Jewish newspaper in New York (1946)."
+            "Bertha and Paul’s 1946 wedding announcement in the German-language New York newspaper Aufbau."
           ],
           "translations": []
         },
@@ -743,5 +730,4 @@ window.contentData = {
       ]
     }
   ]
-}
-;
+};

@@ -1,0 +1,109 @@
+html.viewing-image { overflow: hidden; }
+
+#image-viewer {
+  --viewer-text: #f2f3ee;
+  --viewer-secondary: #bdc5bd;
+  box-sizing: border-box;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  width: min(1400px, calc(100vw - 48px));
+  height: calc(100vh - 48px);
+  height: calc(100dvh - 48px);
+  max-width: none;
+  max-height: none;
+  overflow: hidden;
+  border: 1px solid #505952;
+  border-radius: 14px;
+  background: #252b27;
+  color: var(--viewer-text);
+  box-shadow: 0 24px 85px #0007;
+  font: 14px/1.45 var(--archive-sans, system-ui, sans-serif);
+  color-scheme: dark;
+}
+#image-viewer[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+#image-viewer::backdrop { background: rgb(11 16 13 / 85%); }
+#image-viewer .image-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #404942;
+}
+.image-tools, .image-actions { display: flex; align-items: center; gap: 3px; }
+#image-viewer .image-toolbar button, #image-viewer .open-original {
+  display: inline-grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  color: var(--viewer-text);
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  font: 550 14px/1 var(--archive-sans, system-ui, sans-serif);
+  cursor: pointer;
+  text-decoration: none;
+}
+#image-viewer button[data-view="out"], #image-viewer button[data-view="in"] { font-size: 24px; font-weight: 400; }
+#image-viewer .image-toolbar button:enabled:hover, #image-viewer .open-original:hover { background: #414b44; }
+#image-viewer .image-toolbar button:disabled { color: #899189; cursor: default; }
+#image-viewer .image-toolbar svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+#image-viewer output { min-width: 4ch; text-align: center; font-variant-numeric: tabular-nums; }
+#image-viewer .tool-divider { height: 20px; width: 1px; margin: 0 6px; background: #505952; }
+#image-viewer :focus-visible, .image-stage:focus-visible { outline: 2px solid #c2dac7; outline-offset: -3px; }
+#image-viewer .image-frame { margin: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+.image-stage {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  background: #161a18;
+  touch-action: none;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.image-stage > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  transform-origin: 0 0;
+  cursor: zoom-in;
+  -webkit-user-drag: none;
+}
+.image-stage[data-zoomed="true"], .image-stage[data-zoomed="true"] > img { cursor: grab; }
+.image-stage[data-dragging="true"][data-zoomed="true"], .image-stage[data-dragging="true"][data-zoomed="true"] > img { cursor: grabbing; }
+.image-stage .image-status:not([hidden]) { display: grid; place-items: center; position: absolute; inset: 0; padding: 1em; color: #eef0eb; }
+#image-viewer figcaption {
+  max-height: 20vh;
+  overflow: auto;
+  margin: 0;
+  padding: 10px 16px 2px;
+  border-top: 1px solid #404942;
+  color: var(--viewer-text);
+  font: inherit;
+}
+#image-viewer .image-gestures { margin: 0; padding: 0 16px 10px; color: var(--viewer-secondary); font-size: 12px; }
+.image-gestures span:nth-child(2) { display: none; }
+.viewer-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (pointer: coarse) {
+  .image-gestures span:first-child { display: none; }
+  .image-gestures span:nth-child(2) { display: inline; }
+}
+@media (max-width: 650px), (max-height: 460px) {
+  #image-viewer { width: 100%; height: 100vh; height: 100dvh; border: 0; border-radius: 0; }
+  #image-viewer .image-toolbar { padding: max(4px, env(safe-area-inset-top)) max(5px, env(safe-area-inset-right)) 4px max(5px, env(safe-area-inset-left)); }
+  #image-viewer .image-toolbar button, #image-viewer .open-original { min-width: 36px; height: 44px; }
+  #image-viewer .tool-divider { margin: 0 2px; }
+  #image-viewer .image-gestures { padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+}

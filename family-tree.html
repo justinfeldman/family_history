@@ -3,67 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3efe6">
-  <meta name="description" content="An interactive five-generation tree of Margot Bachrach and her direct ancestors.">
-  <title>Margot’s Family Tree · Bachrach &amp; Baum Family Archive</title>
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Explore the Bachrach and Baum family through people, places and the records that connect them.">
+  <title>Family & Places · Bachrach & Baum Family Archive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,650&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261020ac">
-  <link rel="stylesheet" href="family-tree.css?v=20261020ac">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,650&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261113">
+  <link rel="stylesheet" href="family-tree.css?v=20261121">
+<link rel="stylesheet" href="archive.css">
 </head>
-<body class="family-tree-page-body">
-  <a class="skip-link" href="#tree">Skip to the family tree</a>
-
-  <header class="site-header" aria-label="Site header">
-    <a class="brand" href="index.html#top" aria-label="Bachrach and Baum Family Archive, home">
-      <span class="brand-mark" aria-hidden="true">B·B</span>
-      <span class="brand-copy">Family Archive</span>
-    </a>
-    <nav class="header-actions" aria-label="Primary navigation">
-      <a class="header-text-link" href="index.html#story">Story</a>
-      <a class="header-text-link" href="documents/">Primary sources</a>
-      <a class="header-tree-link active" href="family-tree.html" aria-current="page">Family tree</a>
-      <a class="menu-button back-to-story" href="index.html#story">Back to story</a>
-    </nav>
-  </header>
-
-  <main class="family-tree-page" id="tree">
-    <header class="family-tree-page-heading">
-      <div>
-        <p class="eyebrow">Five generations · 31 people</p>
-        <h1>Margot’s direct family tree</h1>
-      </div>
-      <p>Earlier generations appear at the top, with Margot at the bottom. Select a person to open their known birth, marriage, and death details and highlight their path to Margot.</p>
+<body class="atlas-page">
+  <a class="skip-link" href="#profile">Skip to selected person</a>
+  <header class="archive-mast"><div class="mast-inner"><a class="archive-brand" href="index.html" aria-label="Family Archive home"><span aria-hidden="true">B·B</span> Family Archive</a><nav aria-label="Archive sections"><a href="wittelsberg.html">Wittelsberg</a><a href="frielendorf.html">Frielendorf</a><a href="margot.html">Margot &amp; WWII</a><a href="torah.html">Torah</a><a href="sources.html">Primary Sources</a></nav></div></header>
+  <main class="atlas-main">
+    <header class="atlas-heading">
+      <div><p class="eyebrow">The family, across generations</p><h1>Margot’s family tree</h1></div>
+      <p>Select a person to explore their records and places.<br>Follow the branches to earlier generations.</p>
     </header>
-
-    <section class="pedigree-shell" aria-labelledby="pedigree-title">
-      <div class="pedigree-toolbar">
-        <div>
-          <h2 id="pedigree-title">Direct ancestry</h2>
-          <p>Great-great-grandparents</p>
+    <div class="tree-explorer">
+      <section class="tree-workspace" aria-labelledby="tree-title">
+        <div class="tree-toolbar">
+          <div><h2 id="tree-title">Direct ancestry</h2><p id="tree-count"></p></div>
+          <div class="tree-controls">
+            <button id="find-person" type="button">Find a person</button>
+            <label class="sr-only" for="tree-branch">Ancestry branch</label>
+            <select id="tree-branch"><option value="1">Both branches</option><option value="2">Bachrach branch</option><option value="3">Baum branch</option></select>
+          </div>
         </div>
-        <p class="pedigree-direction"><span aria-hidden="true">↓</span> Margot</p>
+        <div class="tree-viewport" id="tree-viewport" role="region" aria-label="Interactive family tree. Scroll or drag to explore; select a person for details." tabindex="0">
+          <div id="tree-canvas"><div id="tree-scene"></div></div>
+        </div>
+        <div class="tree-bottom-bar">
+          <p><span class="tree-line-key"></span> Parent &amp; child <span class="tree-line-key tentative"></span> Tentative / conflicting</p>
+          <div class="zoom-controls"><button id="tree-zoom-out" type="button" aria-label="Zoom out of tree">−</button><output id="tree-zoom-value">100%</output><button id="tree-zoom-in" type="button" aria-label="Zoom into tree">+</button><button id="tree-fit" type="button">Fit tree</button></div>
+        </div>
+        <div class="extended-family"><div><h3>Extended family</h3><p>Connections beyond Margot’s direct line</p></div><div id="extended-family-list"></div></div>
+      </section>
+      <aside class="profile-panel tree-person-panel" id="profile" aria-label="Selected person" tabindex="-1">
+        <div id="person-header"></div>
+        <section class="events-section" aria-labelledby="events-title"><div class="section-label"><h3 id="events-title">Life events</h3><span id="event-count"></span></div><p class="section-hint">Select an event to see its place below.</p><ol id="life-events" class="life-events"></ol></section>
+        <section class="person-places">
+          <h3>Places &amp; local life <span id="place-count"></span></h3>
+          <section class="geography-panel" aria-label="Places associated with the selected person">
+            <div id="place-tabs" class="place-tabs" role="group" aria-label="Select a place"></div>
+            <section id="place-detail" class="place-detail" aria-live="polite"></section>
+          </section>
+        </section>
+        <section class="family-neighborhood"><h3>Family connections</h3><div id="family-connections"></div></section>
+        <div id="person-evidence"></div>
+      </aside>
+    </div>
+    <dialog id="person-picker" class="person-picker" aria-labelledby="person-picker-title">
+      <div class="picker-heading"><h2 id="person-picker-title">Find a person</h2><button id="close-picker" type="button" aria-label="Close person search">×</button></div>
+      <div class="people-controls">
+        <label for="person-search">Name, village, or alias</label>
+        <div class="search-wrap"><input id="person-search" type="search" placeholder="Search the family…" autocomplete="off"></div>
+        <label class="sr-only" for="branch-filter">Family branch</label>
+        <select id="branch-filter"><option value="all">All family branches</option><option value="bachrach">Bachrach · Steinfeld · Haas</option><option value="baum">Baum · Grünbaum · Wolf</option><option value="extended">Extended family</option><option value="tentative">Tentative ancestry</option></select>
+        <p id="person-count" class="count" aria-live="polite"></p>
       </div>
-      <div class="pedigree-stage" id="pedigree-stage" role="tree" aria-label="Margot Bachrach and four generations of direct ancestors">
-        <svg class="pedigree-links" id="pedigree-links" aria-hidden="true"></svg>
-      </div>
-    </section>
-
-    <section class="person-details" id="person-details" aria-live="polite" hidden>
-      <button class="person-details-close" id="person-details-close" type="button" aria-label="Close person details">×</button>
-      <div id="person-details-content"></div>
-    </section>
-
-    <p class="family-tree-source-note">The tree follows Margot’s direct ancestry only. Unknown dates and places are marked rather than inferred. Selectable spouse and parent links stay within this direct line, except where a later marriage is listed as a vital event.</p>
+      <div id="person-list" class="person-list"></div>
+      <div class="rail-footer"><button id="reset-person" type="button">Return to Margot ↗</button></div>
+    </dialog>
+    <footer class="atlas-footer"><p>A family tree in progress. Reported facts, estimates, and tentative connections remain distinguishable.</p><a href="research-notes.html">Sources &amp; research notes ↗</a></footer>
   </main>
-
-  <footer class="site-footer family-tree-footer">
-    <p class="footer-title">Bachrach &amp; Baum Family Archive</p>
-    <p>A living family history assembled from photographs, family testimony, government files, newspapers, and migration records.</p>
-    <a href="index.html#story">Return to the family story →</a>
-  </footer>
-
-  <script src="family-tree.js?v=20261020ad" defer></script>
+  <noscript><p>This explorer needs JavaScript. <a href="research-notes.html">Read the research notes</a>.</p></noscript>
+  <script src="family-data.js?v=20261114f"></script>
+  <script src="family-pedigree.js?v=20261113" defer></script>
+  <script src="family-tree.js?v=20261121" defer></script>
 </body>
 </html>

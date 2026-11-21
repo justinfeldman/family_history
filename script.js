@@ -64,179 +64,6 @@ const chapterMeta = {
   }
 };
 
-const ancestralPlaces = [
-  {
-    id: "frielendorf", name: "Frielendorf", x: 64.5, y: 29.5,
-    note: "The Bachrach household location across two generations.",
-    couples: ["gg-bachrach", "g-bachrach"],
-    snapshot: {
-      year: "1861", total: "676", jewish: "128 (18.9%)",
-      fact: "Frielendorf sustained a synagogue, school, and cemetery. Butchers such as Jakob Bachrach linked its farms and livestock dealers to consumers, placing Jewish tradespeople inside both the opportunities and strains of the changing agricultural economy.",
-      sources: [{ label: "Jewish history of Frielendorf", url: "https://www.alemannia-judaica.de/frielendorf_synagoge.htm" }]
-    }
-  },
-  {
-    id: "merzhausen", name: "Merzhausen", x: 60.0, y: 39.5,
-    note: "Placed here using Hennel Spier’s recorded birthplace.",
-    couples: ["gg-spier"],
-    snapshot: {
-      year: "1861", total: "710", jewish: "75 (10.6%)",
-      fact: "Many Jewish families worked in textile trade and initially lived along the lane still known as Judengasse. The village maintained a Jewish elementary school for much of the period from the 1830s to 1932.",
-      sources: [{ label: "Jewish history of Merzhausen", url: "https://www.alemannia-judaica.de/merzhausen_synagoge.htm" }]
-    }
-  },
-  {
-    id: "josbach", name: "Josbach", x: 50.0, y: 38.5,
-    note: "The Steinfeld household location across two generations.",
-    couples: ["gg-steinfeld", "g-steinfeld"],
-    snapshot: {
-      year: "1861", total: "about 360", jewish: "38 (about 11%)",
-      fact: "Josbach’s Jews belonged to the Halsdorf synagogue community. In 1878 the Steinfeld and Kadden families bought a house for a local prayer room; neighbors sometimes came from Wohra to make the ten-man minyan.",
-      sources: [
-        { label: "1861 religious population", url: "https://de.wikipedia.org/wiki/Josbach" },
-        { label: "Jewish life in Josbach", url: "https://www.alemannia-judaica.de/images/Images%20422/Josbach%20Beitrag%20Michael%20Dorhs.pdf" }
-      ]
-    }
-  },
-  {
-    id: "mardorf", name: "Mardorf", x: 44.0, y: 44.0,
-    note: "Placed here using Marle Haas’s recorded birthplace.",
-    couples: ["gg-haas"],
-    snapshot: {
-      year: "1885", total: "1,002", jewish: "47 (4.7%)",
-      fact: "An 1828 list included Haas households among twelve Jewish families; all made their living in livestock, fruit, or grain trade. The community maintained a synagogue, religious school, and ritual bath.",
-      sources: [{ label: "Jewish history of Mardorf", url: "https://www.alemannia-judaica.de/mardorf_synagoge.htm" }]
-    }
-  },
-  {
-    id: "wittelsberg", name: "Wittelsberg", x: 39.0, y: 40.5,
-    note: "The Baum household location across two generations.",
-    couples: ["gg-baum", "g-baum"],
-    snapshot: {
-      year: "1885", total: "475", jewish: "27 (5.7%)",
-      fact: "Jewish residents worshiped and buried their dead in nearby Rauischholzhausen. Wittelsberg lay in the Kirchhain district, where agrarian distress helped Otto Böckel turn attacks on Jewish cattle and grain dealers into a powerful rural movement.",
-      sources: [
-        { label: "Population and Jewish history", url: "https://de.wikipedia.org/wiki/Wittelsberg" },
-        { label: "Rauischholzhausen synagogue", url: "https://alemannia-judaica.de/rauischholzhausen_synagoge.htm" },
-        { label: "Jewish life in Holzhausen and Wittelsberg", url: "https://www.alemannia-judaica.de/images/Images%20423/junge_theres_nobody_left_2018.pdf" }
-      ]
-    }
-  },
-  {
-    id: "merlau", name: "Merlau", x: 49.5, y: 49.0,
-    note: "Placed here using Bertha Wolf’s recorded birthplace.",
-    couples: ["gg-wolf"],
-    snapshot: {
-      year: "1829", total: "415", jewish: "12 (2.9%)",
-      fact: "Merlau’s few Jewish families—including Wolf households recorded in 1828—belonged to the congregation in Nieder-Ohmen, where the synagogue, religious school, ritual bath, and cemetery were located.",
-      sources: [
-        { label: "1829 religious population", url: "https://de.wikipedia.org/wiki/Merlau" },
-        { label: "Nieder-Ohmen and Merlau community", url: "https://www.alemannia-judaica.de/nieder_ohmen_synagoge.htm" }
-      ]
-    }
-  },
-  {
-    id: "rohrbach", name: "Rohrbach (Büdingen)", x: 53.0, y: 58.5,
-    note: "Placed here using Anselm Grünbaum’s recorded birthplace.",
-    couples: ["gg-grunbaum"],
-    snapshot: {
-      year: "1880", total: "393", jewish: "86 (21.9%)",
-      fact: "Nearly one in five villagers was Jewish at this point. The community maintained a synagogue, schoolroom, ritual bath, and cemetery; the rebuilt 1884 synagogue seated 54 men and 26 women.",
-      sources: [{ label: "Jewish history of Rohrbach", url: "https://www.alemannia-judaica.de/rohrbach_fb_synagoge.htm" }]
-    }
-  },
-  {
-    id: "heldenbergen", name: "Heldenbergen", x: 45.0, y: 63.0,
-    note: "Placed here using Minna Scheuer’s recorded birthplace.",
-    couples: ["gg-scheuer"],
-    snapshot: {
-      year: "about 1925", total: "about 1,700", jewish: "110 (6.5%)",
-      fact: "The community supported mutual-aid and women’s charities, a synagogue association, a Jewish youth group, and a soldiers’ association originally formed to provide kosher food to Jewish servicemen.",
-      sources: [{ label: "Jewish history of Heldenbergen", url: "https://alemannia-judaica.de/heldenbergen_synagoge.htm" }]
-    }
-  },
-  {
-    id: "staden", name: "Staden", x: 44.0, y: 56.0,
-    note: "Placed here using Lina Grünbaum’s recorded birthplace.",
-    couples: ["g-grunbaum"],
-    snapshot: {
-      year: "1900", total: "393", jewish: "56 (14.2%)",
-      fact: "Jewish families traded livestock, horses, and farm produce and ran several village shops. Their congregation maintained a synagogue, religious school, ritual bath, and cemetery.",
-      sources: [{ label: "Jewish history of Staden", url: "https://www.alemannia-judaica.de/staden_synagoge.htm" }]
-    }
-  }
-];
-
-const referenceCities = [
-  { name: "Kassel", x: 69.5, y: 15.5, labelSide: "left" },
-  { name: "Marburg", x: 40.5, y: 37.5, labelSide: "left" },
-  { name: "Frankfurt", x: 36.5, y: 68.5, labelSide: "left" }
-];
-
-const familyPeople = {
-  "Jacob Bachrach": { dates: "1778–1846", generation: "great-great" },
-  "Betti Stern": { dates: "c. 1786–1853", generation: "great-great" },
-  "Wolf Joseph Spier": { dates: "1773–1865", generation: "great-great" },
-  "Guetel (Giddel) Jacob": { dates: "1792–1836", generation: "great-great" },
-  "Salomon Steinfeld": { dates: "1793–1848", generation: "great-great" },
-  "Roschen Stern": { dates: "1788–1868", generation: "great-great" },
-  "Samuel Mendel Haas": { dates: "1770–1862", generation: "great-great" },
-  "Sarah Katten": { dates: "1772–1839", generation: "great-great" },
-  "Isaac Baum": { dates: "1798–1896", generation: "great-great" },
-  "Feile (Veilchen) Jacobsohn": { dates: "c. 1799–1859", generation: "great-great" },
-  "Anschel Löb Wolf": { dates: "c. 1801–1868", generation: "great-great" },
-  "Gitel Rothschild": { dates: "c. 1812–unknown", generation: "great-great" },
-  "Löb Grünbaum": { dates: "dates unknown–before 1886", generation: "great-great" },
-  "Jettchen Süssel": { dates: "dates unknown–before 1886", generation: "great-great" },
-  "Abraham Scheuer": { dates: "dates unknown–1876/1901", generation: "great-great" },
-  "Regine Hirsch": { dates: "dates unknown–1876/1901", generation: "great-great" },
-  "Noah Bachrach": { dates: "1821–1884", generation: "great" },
-  "Hennel (Hindel) Spier": { dates: "1819–1916", generation: "great" },
-  "Meier Steinfeld": { dates: "1819–1898", generation: "great" },
-  "Marle “Miriam/Merle” Haas": { dates: "1821–1878", generation: "great" },
-  "Elias Baum": { dates: "1843–1927", generation: "great" },
-  "Bertha Wolf": { dates: "1842–1880", generation: "great" },
-  "Anselm Grünbaum": { dates: "1830–1920", generation: "great" },
-  "Abrahamina “Minna” Scheuer": { dates: "1846–1909", generation: "great" },
-  "Jakob Noa Bachrach": { dates: "1853–1934", generation: "grandparent" },
-  "Auguste “Gustel” Steinfeld": { dates: "1857–1938", generation: "grandparent" },
-  "Anschel Baum": { dates: "1868–1938", generation: "grandparent" },
-  "Lina Grünbaum": { dates: "1875–1949", generation: "grandparent" },
-  "Samuel Bachrach": { dates: "1890–1977", generation: "parent" },
-  "Bertha Baum": { dates: "1901–1953", generation: "parent" },
-  "Margot Bachrach": { dates: "1925–2016", generation: "margot" }
-};
-
-const lineageCouples = {
-  "gg-bachrach": { label: "Great-great-grandparents", people: ["Jacob Bachrach", "Betti Stern"], next: "g-bachrach", nextChild: "Noah Bachrach" },
-  "gg-spier": { label: "Great-great-grandparents", people: ["Wolf Joseph Spier", "Guetel (Giddel) Jacob"], next: "g-bachrach", nextChild: "Hennel (Hindel) Spier" },
-  "gg-steinfeld": { label: "Great-great-grandparents", people: ["Salomon Steinfeld", "Roschen Stern"], next: "g-steinfeld", nextChild: "Meier Steinfeld" },
-  "gg-haas": { label: "Great-great-grandparents", people: ["Samuel Mendel Haas", "Sarah Katten"], next: "g-steinfeld", nextChild: "Marle “Miriam/Merle” Haas" },
-  "gg-baum": { label: "Great-great-grandparents", people: ["Isaac Baum", "Feile (Veilchen) Jacobsohn"], next: "g-baum", nextChild: "Elias Baum" },
-  "gg-wolf": { label: "Great-great-grandparents", people: ["Anschel Löb Wolf", "Gitel Rothschild"], next: "g-baum", nextChild: "Bertha Wolf" },
-  "gg-grunbaum": { label: "Great-great-grandparents", people: ["Löb Grünbaum", "Jettchen Süssel"], next: "g-grunbaum", nextChild: "Anselm Grünbaum" },
-  "gg-scheuer": { label: "Great-great-grandparents", people: ["Abraham Scheuer", "Regine Hirsch"], next: "g-grunbaum", nextChild: "Abrahamina “Minna” Scheuer" },
-  "g-bachrach": { label: "Great-grandparents", people: ["Noah Bachrach", "Hennel (Hindel) Spier"], next: "grand-bachrach", nextChild: "Jakob Noa Bachrach" },
-  "g-steinfeld": { label: "Great-grandparents", people: ["Meier Steinfeld", "Marle “Miriam/Merle” Haas"], next: "grand-bachrach", nextChild: "Auguste “Gustel” Steinfeld" },
-  "g-baum": { label: "Great-grandparents", people: ["Elias Baum", "Bertha Wolf"], next: "grand-baum", nextChild: "Anschel Baum" },
-  "g-grunbaum": { label: "Great-grandparents", people: ["Anselm Grünbaum", "Abrahamina “Minna” Scheuer"], next: "grand-baum", nextChild: "Lina Grünbaum" },
-  "grand-bachrach": { label: "Grandparents", people: ["Jakob Noa Bachrach", "Auguste “Gustel” Steinfeld"], next: "parents", nextChild: "Samuel Bachrach" },
-  "grand-baum": { label: "Grandparents", people: ["Anschel Baum", "Lina Grünbaum"], next: "parents", nextChild: "Bertha Baum" },
-  "parents": { label: "Parents", people: ["Samuel Bachrach", "Bertha Baum"], next: "margot", nextChild: "Margot Bachrach" },
-  "margot": { label: "Margot", people: ["Margot Bachrach"] }
-};
-
-function lineageForCouple(coupleId) {
-  const stages = [];
-  let stageId = coupleId;
-  while (stageId && lineageCouples[stageId]) {
-    const stage = lineageCouples[stageId];
-    stages.push({ ...stage, id: stageId });
-    stageId = stage.next;
-  }
-  return stages;
-}
-
 const backgroundTimeline = [
   {
     date: "c. 1770–1806",
@@ -283,9 +110,9 @@ const backgroundTimeline = [
 const mediaVariants = {
   "assets/Synagogue in Frielendorf.png": {
     enhanced: "assets/colorized-frielendorf-synagogue.png",
-    enhancedLabel: "AI colorized",
+    enhancedLabel: "Colorized",
     kind: "place",
-    note: "AI-assisted colorization. Architectural detail and colors are interpretive; use Original to inspect the source photograph."
+    note: "Colorization. Architectural detail and colors are interpretive; use Original to inspect the source photograph."
   },
   "assets/frielendorf-schoolroom-dispute-1896-original.jpg": {
     enhanced: "assets/facsimile-frielendorf-schoolroom-dispute-1896.png",
@@ -295,27 +122,21 @@ const mediaVariants = {
   },
   "assets/Germany baby Bertha Baum 1901.jpg": {
     enhanced: "assets/restored-baum-family-1901-2026.png",
-    enhancedLabel: "AI restored",
+    enhancedLabel: "Restored",
     kind: "photo",
-    note: "AI-assisted restoration created to evoke the clarity of a present-day photograph. Reconstructed facial detail, color, texture, and other fine detail are interpretive; use Original to inspect the historical photograph."
+    note: "Restoration created to evoke the clarity of a present-day photograph. Reconstructed facial detail, color, texture, and other fine detail are interpretive; use Original to inspect the historical photograph."
   },
   "assets/Murry & Margot photo.jpeg": {
     enhanced: "assets/colorized-margot-murry.png",
-    enhancedLabel: "AI colorized",
+    enhancedLabel: "Colorized",
     kind: "photo",
-    note: "AI-assisted colorization. Clothing and interior colors are interpretive."
+    note: "Colorization. Clothing and interior colors are interpretive."
   },
   "assets/Samuel Bachrach.jpeg": {
     enhanced: "assets/samuel-bachrach-80-restored-2026.png",
-    enhancedLabel: "AI restored",
+    enhancedLabel: "Restored",
     kind: "photo",
-    note: "AI-assisted reconstruction created to evoke a present-day studio portrait. Reconstructed facial detail, color, texture, and clothing detail are interpretive; use Original to inspect the newspaper image."
-  },
-  "assets/Bertha Paul wedding announcement Aufbau.png": {
-    enhanced: "assets/Bertha Paul wedding announcement Aufbau-upscaled.png",
-    enhancedLabel: "AI restored",
-    kind: "document",
-    note: "AI-assisted restoration and upscaling. The wording, composition, border, and newsprint character follow the original clipping; use Original to inspect the source image."
+    note: "Reconstruction created to evoke a present-day studio portrait. Reconstructed facial detail, color, texture, and clothing detail are interpretive; use Original to inspect the newspaper image."
   },
   "assets/Jakob Bachrach 75th birthday announcement.jpg": {
     enhanced: "assets/facsimile-jakob-announcement-v2.png",
@@ -373,9 +194,9 @@ const mediaVariants = {
   },
   "assets/Werner Bachrach.jpg": {
     enhanced: "assets/werner-bachrach-portrait-restored-2026.png",
-    enhancedLabel: "AI restored",
+    enhancedLabel: "Restored",
     kind: "photo",
-    note: "AI-assisted reconstruction of the portrait embedded in Werner's 1951 Brazilian consular record, created to evoke a present-day studio photograph. Reconstructed facial detail, color, texture, and clothing detail are interpretive; use Original to inspect the complete document."
+    note: "Reconstruction of the portrait embedded in Werner's 1951 Brazilian consular record, created to evoke a present-day studio photograph. Reconstructed facial detail, color, texture, and clothing detail are interpretive; use Original to inspect the complete document."
   },
   "assets/baum_reparations_page.png": {
     enhanced: "assets/facsimile-reparations-inquiry-v2.png",
@@ -556,267 +377,6 @@ function renderMediaItem(item, chapterTitle) {
   });
   figure.append(grid);
   return figure;
-}
-
-function renderAncestralAtlas() {
-  const atlas = document.createElement("section");
-  atlas.className = "ancestry-atlas context-wide";
-  atlas.setAttribute("aria-labelledby", "ancestry-map-title");
-
-  const header = document.createElement("div");
-  header.className = "context-block-heading";
-  header.innerHTML = `
-    <div><p class="eyebrow">An ancestral atlas</p><h3 id="ancestry-map-title">Villages where ancestors lived, 1770s–1930s</h3></div>
-    <p>Choose a generation and place, then select a couple to see their direct family line to Margot.</p>
-  `;
-
-  const controls = document.createElement("div");
-  controls.className = "map-controls";
-  controls.setAttribute("role", "group");
-  controls.setAttribute("aria-label", "Filter ancestral locations by generation");
-  const filterOptions = [
-    { id: "all", label: "Both generations" },
-    { id: "great-great", label: "Great-great-grandparents" },
-    { id: "great", label: "Great-grandparents" }
-  ];
-
-  const layout = document.createElement("div");
-  layout.className = "ancestry-map-layout";
-  const map = document.createElement("div");
-  map.className = "ancestry-map";
-  const mapImage = document.createElement("img");
-  mapImage.src = "assets/hesse-location-base.svg";
-  mapImage.alt = "Map of Hesse with nine approximate ancestral household locations and the reference cities Frankfurt, Marburg, and Kassel";
-  map.append(mapImage);
-
-  referenceCities.forEach(city => {
-    const marker = document.createElement("div");
-    marker.className = `map-reference-city label-${city.labelSide}`;
-    marker.style.left = `${city.x}%`;
-    marker.style.top = `${city.y}%`;
-    marker.setAttribute("aria-label", `${city.name}, reference city`);
-    marker.innerHTML = `<i aria-hidden="true"></i><span>${city.name}</span>`;
-    map.append(marker);
-  });
-
-  const detail = document.createElement("aside");
-  detail.className = "map-detail";
-  detail.setAttribute("aria-label", "Selected place and direct family line");
-  const placeSummary = document.createElement("div");
-  placeSummary.className = "map-place-summary";
-  placeSummary.setAttribute("aria-live", "polite");
-  const detailIndex = document.createElement("span");
-  detailIndex.className = "map-detail-index";
-  const detailName = document.createElement("h4");
-  const detailNote = document.createElement("p");
-  const villageSnapshot = document.createElement("section");
-  villageSnapshot.className = "village-snapshot";
-  const snapshotKicker = document.createElement("p");
-  snapshotKicker.className = "village-snapshot-kicker";
-  const snapshotStats = document.createElement("div");
-  snapshotStats.className = "village-snapshot-stats";
-  const totalPopulation = document.createElement("div");
-  const jewishPopulation = document.createElement("div");
-  snapshotStats.append(totalPopulation, jewishPopulation);
-  const snapshotFact = document.createElement("p");
-  snapshotFact.className = "village-snapshot-fact";
-  const snapshotSources = document.createElement("p");
-  snapshotSources.className = "village-snapshot-sources";
-  villageSnapshot.append(snapshotKicker, snapshotStats, snapshotFact, snapshotSources);
-  const detailCouples = document.createElement("ul");
-  detailCouples.className = "map-couples";
-  placeSummary.append(detailIndex, detailName, detailNote, villageSnapshot, detailCouples);
-
-  const lineage = document.createElement("section");
-  lineage.className = "compact-lineage";
-  lineage.setAttribute("aria-labelledby", "ancestry-lineage-title");
-  lineage.setAttribute("aria-live", "polite");
-  detail.append(placeSummary, lineage);
-
-  let activeFilter = "all";
-  let activePlace = ancestralPlaces.find(place => place.id === "frielendorf") || ancestralPlaces[0];
-  let activeCoupleId = "gg-bachrach";
-  const markerButtons = [];
-
-  function coupleGeneration(coupleId) {
-    return coupleId.startsWith("gg-") ? "great-great" : "great";
-  }
-
-  function visibleCouples(place) {
-    return place.couples
-      .map(id => ({ id, ...lineageCouples[id] }))
-      .filter(couple => activeFilter === "all" || coupleGeneration(couple.id) === activeFilter);
-  }
-
-  function namesForCouple(couple) {
-    return couple.people.join(" + ");
-  }
-
-  function datesForCouple(couple) {
-    return couple.people.map(name => familyPeople[name]?.dates || "dates unknown").join(" · ");
-  }
-
-  function relationshipLabel(stage) {
-    return stage.label === "Margot" ? "Margot" : `Margot’s ${stage.label.toLowerCase()}`;
-  }
-
-  function renderLineage(coupleId) {
-    const stages = lineageForCouple(coupleId);
-    if (!stages.length) return;
-    lineage.innerHTML = "";
-
-    const heading = document.createElement("header");
-    heading.className = "compact-lineage-heading";
-    heading.innerHTML = `
-      <p class="eyebrow">Direct line to Margot</p>
-      <h5 id="ancestry-lineage-title">How this couple connects</h5>
-    `;
-
-    const path = document.createElement("ol");
-    path.className = "compact-lineage-list";
-    stages.forEach((stage, index) => {
-      const item = document.createElement("li");
-      item.className = "compact-lineage-stage";
-      const label = document.createElement("p");
-      label.textContent = relationshipLabel(stage);
-      const names = document.createElement("strong");
-      names.textContent = namesForCouple(stage);
-      const dates = document.createElement("span");
-      dates.textContent = datesForCouple(stage);
-      item.append(label, names, dates);
-      if (index < stages.length - 1) {
-        const descent = document.createElement("span");
-        descent.className = "compact-lineage-descent";
-        descent.textContent = "their child";
-        item.append(descent);
-      }
-      path.append(item);
-    });
-
-    lineage.append(heading, path);
-  }
-
-  function syncCoupleButtons() {
-    const buttons = atlas.querySelectorAll("button[data-couple-id]");
-    buttons.forEach(button => {
-      const selected = button.dataset.coupleId === activeCoupleId;
-      button.classList.toggle("selected", selected);
-      button.setAttribute("aria-pressed", String(selected));
-    });
-  }
-
-  function selectCouple(coupleId) {
-    if (!lineageCouples[coupleId]) return;
-    activeCoupleId = coupleId;
-    renderLineage(coupleId);
-    syncCoupleButtons();
-  }
-
-  function renderDetail(place) {
-    activePlace = place;
-    const placeIndex = ancestralPlaces.indexOf(place) + 1;
-    detailIndex.textContent = `Place ${String(placeIndex).padStart(2, "0")}`;
-    detailName.textContent = place.name;
-    detailNote.textContent = place.note;
-    snapshotKicker.textContent = `Village snapshot · ${place.snapshot.year}`;
-    totalPopulation.innerHTML = `<strong>${place.snapshot.total}</strong><span>Total residents</span>`;
-    jewishPopulation.innerHTML = `<strong>${place.snapshot.jewish}</strong><span>Jewish residents</span>`;
-    snapshotFact.textContent = place.snapshot.fact;
-    snapshotSources.innerHTML = "";
-    place.snapshot.sources.forEach((source, index) => {
-      if (index) snapshotSources.append(document.createTextNode(" · "));
-      const link = document.createElement("a");
-      link.href = source.url;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.textContent = `${source.label} ↗`;
-      snapshotSources.append(link);
-    });
-    detailCouples.innerHTML = "";
-    const couples = visibleCouples(place);
-    couples.forEach(couple => {
-      const item = document.createElement("li");
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "map-couple-button";
-      button.dataset.coupleId = couple.id;
-      button.setAttribute("aria-pressed", String(couple.id === activeCoupleId));
-      button.innerHTML = `<small>Margot’s ${couple.label.toLowerCase()}</small><strong>${namesForCouple(couple)}</strong><span>${datesForCouple(couple)}</span>`;
-      button.addEventListener("click", () => selectCouple(couple.id));
-      item.append(button);
-      detailCouples.append(item);
-    });
-    const nextSelection = couples.find(couple => couple.id === activeCoupleId) || couples[0];
-    if (nextSelection) selectCouple(nextSelection.id);
-    markerButtons.forEach(({ button, place: candidate }) => {
-      const selected = candidate.id === place.id;
-      button.classList.toggle("active", selected);
-      button.setAttribute("aria-pressed", String(selected));
-    });
-  }
-
-  ancestralPlaces.forEach((place, index) => {
-    const marker = document.createElement("button");
-    marker.type = "button";
-    marker.className = "map-marker";
-    marker.style.left = `${place.x}%`;
-    marker.style.top = `${place.y}%`;
-    const markerLabel = document.createElement("span");
-    markerLabel.textContent = String(index + 1);
-    marker.append(markerLabel);
-    marker.setAttribute("aria-pressed", "false");
-    marker.addEventListener("click", () => renderDetail(place));
-    markerButtons.push({ button: marker, place });
-    map.append(marker);
-  });
-
-  filterOptions.forEach((option, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `map-filter${index === 0 ? " active" : ""}`;
-    button.textContent = option.label;
-    button.setAttribute("aria-pressed", String(index === 0));
-    button.addEventListener("click", () => {
-      activeFilter = option.id;
-      controls.querySelectorAll(".map-filter").forEach(candidate => {
-        const selected = candidate === button;
-        candidate.classList.toggle("active", selected);
-        candidate.setAttribute("aria-pressed", String(selected));
-      });
-      markerButtons.forEach(entry => {
-        const couples = visibleCouples(entry.place);
-        const count = couples.length;
-        entry.button.hidden = count === 0;
-        entry.button.style.setProperty("--couple-count", String(count));
-        entry.button.setAttribute("aria-label", `${entry.place.name}: ${count} ${count === 1 ? "couple" : "couples"} — ${couples.map(namesForCouple).join("; ")}`);
-      });
-      if (!visibleCouples(activePlace).length) {
-        activePlace = ancestralPlaces.find(place => visibleCouples(place).length) || ancestralPlaces[0];
-      }
-      renderDetail(activePlace);
-    });
-    controls.append(button);
-  });
-
-  markerButtons.forEach(entry => {
-    const couples = visibleCouples(entry.place);
-    const count = couples.length;
-    entry.button.style.setProperty("--couple-count", String(count));
-    entry.button.setAttribute("aria-label", `${entry.place.name}: ${count} ${count === 1 ? "couple" : "couples"} — ${couples.map(namesForCouple).join("; ")}`);
-  });
-
-  const weightKey = document.createElement("div");
-  weightKey.className = "map-weight-key";
-  weightKey.setAttribute("aria-label", "Map marker key");
-  weightKey.innerHTML = `<span class="map-key-item"><span class="weight-dots" aria-hidden="true"><i></i><i></i></span><span>Larger red markers represent more ancestral couples.</span></span><span class="map-key-item"><i class="reference-city-dot" aria-hidden="true"></i><span>Black dots mark reference cities and are not selectable.</span></span>`;
-
-  layout.append(map, detail);
-  const caption = document.createElement("p");
-  caption.className = "map-caption";
-  caption.innerHTML = `Household locations are approximate. Where a shared residence is not explicit, the map uses the listed descendant’s birthplace. Frankfurt, Marburg, and Kassel are static geographic reference points. Base map: <a href="https://commons.wikimedia.org/wiki/File:Hesse_location_map.svg" target="_blank" rel="noreferrer">TUBS and NordNordWest, Wikimedia Commons</a> (CC BY-SA).`;
-  atlas.append(header, controls, weightKey, layout, caption);
-  renderDetail(activePlace);
-  return atlas;
 }
 
 function renderHistoryTimeline() {
@@ -1155,8 +715,7 @@ function renderChapter(section, index, sections) {
     } else if (item.type === "image_placeholder") {
       const media = renderMediaItem(item, section.title);
       if (media) body.append(media);
-    } else if (item.type === "ancestral_atlas") {
-      body.append(renderAncestralAtlas());
+
     } else if (item.type === "history_timeline") {
       body.append(renderHistoryTimeline());
     } else if (item.type === "restitution_table") {

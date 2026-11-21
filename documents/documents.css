@@ -510,38 +510,7 @@
 }
 
 .document-viewport {
-  display: grid;
-  min-height: 620px;
-  place-items: center;
-  overflow: hidden;
-  padding: clamp(16px, 3vw, 40px);
-  cursor: zoom-in;
-  outline: none;
-  touch-action: none;
-  user-select: none;
-}
-
-.document-viewport[data-zoomed="true"] {
-  cursor: grab;
-}
-
-.document-viewport[data-dragging="true"] {
-  cursor: grabbing;
-}
-
-.document-viewport:focus-visible {
-  box-shadow: inset 0 0 0 3px #e3aaa7;
-}
-
-.document-viewport img {
-  max-height: 78vh;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, .4);
-  transform: translate3d(0, 0, 0) scale(1);
-  transform-origin: center;
-  will-change: transform;
+  height: clamp(360px, 76vh, 850px);
 }
 
 .document-stage figcaption {
@@ -691,7 +660,7 @@
   }
 
   .document-viewport {
-    min-height: 420px;
+    height: clamp(280px, 65vh, 620px);
   }
 
   .reader-footer {
@@ -706,3 +675,6 @@
     transition: none;
   }
 }
+
+.card-image-caption { grid-column: 1 / -1; font: 14px/1.45 var(--sans); color: var(--ink-soft); }
+.thumbnail-button span { position: static; display: block; padding: 5px 6px; font-size: 12px; line-height: 1.3; text-align: left; }

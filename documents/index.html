@@ -11,21 +11,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,650&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css?v=20261021b">
   <link rel="stylesheet" href="documents.css?v=20261021b">
+<link rel="stylesheet" href="../archive.css">
+  <link rel="stylesheet" href="../image-viewer.css">
 </head>
 <body class="reading-room-page">
   <a class="skip-link" href="#collection">Skip to the documents</a>
 
-  <header class="site-header" aria-label="Site header">
-    <a class="brand" href="../" aria-label="Bachrach and Baum family history, home">
-      <span class="brand-mark" aria-hidden="true">B·B</span>
-      <span class="brand-copy">Family Archive</span>
-    </a>
-    <nav class="header-actions" aria-label="Primary navigation">
-      <a class="header-text-link" href="../#story">Story</a>
-      <a class="header-text-link current" href="./" aria-current="page">Primary sources</a>
-      <a class="header-tree-link" href="../family-tree.html">Family tree</a>
-    </nav>
-  </header>
+  <header class="archive-mast"><div class="mast-inner"><a class="archive-brand" href="../index.html" aria-label="Family Archive home"><span aria-hidden="true">B·B</span> Family Archive</a><nav aria-label="Archive sections"><a href="../wittelsberg.html">Wittelsberg</a><a href="../frielendorf.html">Frielendorf</a><a href="../margot.html">Margot &amp; WWII</a><a href="../torah.html">Torah</a><a href="../sources.html" aria-current="page">Primary Sources</a></nav></div></header>
 
   <main>
     <section class="sources-hero" aria-labelledby="sources-title">
@@ -83,7 +75,7 @@
             <button type="button" class="variant-tab active" data-variant="english" aria-pressed="true">English facsimile</button>
             <button type="button" class="variant-tab" data-variant="original" aria-pressed="false">Archival original</button>
           </div>
-          <p class="viewer-hint">Click the document to zoom; drag to pan.</p>
+          <p class="viewer-hint">Scroll or pinch to zoom. Drag to pan.</p>
         </div>
 
         <div class="reader-layout">
@@ -97,15 +89,17 @@
                   <button type="button" class="page-button" id="next-page" aria-label="Next page">→</button>
                 </div>
                 <div class="zoom-controls" role="group" aria-label="Zoom controls">
-                  <button type="button" class="viewer-button" id="zoom-out" aria-label="Zoom out">−</button>
-                  <output id="zoom-level" aria-live="polite">100%</output>
-                  <button type="button" class="viewer-button" id="zoom-in" aria-label="Zoom in">+</button>
-                  <button type="button" class="viewer-button reset-view" id="reset-view">Reset</button>
+                  <button type="button" class="viewer-button" id="zoom-out" data-view="out" aria-label="Zoom out">−</button>
+                  <output id="zoom-level" aria-label="Image magnification" aria-live="off">—</output>
+                  <button type="button" class="viewer-button" id="zoom-in" data-view="in" aria-label="Zoom in">+</button>
+                  <button type="button" class="viewer-button reset-view" id="reset-view" data-view="fit" title="Fit image (0)">Fit</button>
+                  <button type="button" class="viewer-button" data-view="actual" aria-label="Actual size" title="Actual size (1)">1:1</button>
+                  <button type="button" class="viewer-button" id="enlarge-document" aria-haspopup="dialog">Enlarge</button>
                   <a class="full-image-link" id="full-image-link" href="#" target="_blank" rel="noreferrer">Open full-size file ↗</a>
                 </div>
               </div>
-              <div class="document-viewport" id="document-viewport" tabindex="0" aria-label="Document image. Click to zoom and drag to pan when enlarged.">
-                <img id="document-image" alt="" draggable="false">
+              <div class="document-viewport image-stage" id="document-viewport" tabindex="0" role="group" aria-label="Document image. Use arrow keys to pan, plus and minus to zoom, 0 to fit or 1 for actual size.">
+                <span class="image-status" role="status" hidden></span>
               </div>
             </div>
             <figcaption id="document-caption"></figcaption>
@@ -114,6 +108,7 @@
 
         <footer class="reader-footer">
           <p id="reader-citation"></p>
+          <a id="reader-translation" href="../sources.html">Read the English text of this page</a>
           <a href="#collection">Return to the document list ↑</a>
         </footer>
       </div>
@@ -123,10 +118,13 @@
   <footer class="site-footer">
     <p class="footer-title">Bachrach &amp; Baum Family Archive</p>
     <p>Primary sources presented with editorial English facsimiles and their archival originals.</p>
-    <a href="../">Return to the family story</a>
+    <a href="../index.html">Return to the family story</a>
   </footer>
 
   <noscript>This reading room requires JavaScript for page navigation. The original image files remain available in the site assets.</noscript>
-  <script src="documents.js?v=20261021h" defer></script>
+  <dialog id="image-viewer" aria-label="Enlarged archival image"></dialog>
+  <script src="../vendor/d3-zoom/d3-zoom.min.js" defer></script>
+  <script src="../image-viewer.js" defer></script>
+  <script src="documents.js?v=20261121" defer></script>
 </body>
 </html>

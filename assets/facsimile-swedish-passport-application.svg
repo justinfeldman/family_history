@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 549 794" role="img" aria-labelledby="title desc">
+  <title id="title">English facsimile of Samuel Bachrach's Swedish alien's-passport application</title>
+  <desc id="desc">The English form follows the original Swedish application line for line and retains faint handwriting and the reception stamp.</desc>
+  <defs>
+    <filter id="ink" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale=".45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation=".22"/></filter>
+    <style>
+      .paper{fill:#faf9f4;fill-opacity:.93}
+      .type{font-family:"Courier New",Courier,monospace;fill:#292722;letter-spacing:.02em;filter:url(#ink)}
+      .serif{font-family:Georgia,"Times New Roman",serif;fill:#211f1b}
+      .sans{font-family:Arial,Helvetica,sans-serif;fill:#272521}
+      .hand{font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;fill:#343947;font-style:italic}
+      .rule{stroke:#38342d;stroke-width:1.8}
+      .fine{stroke:#777064;stroke-width:1}
+      .stamp{fill:none;stroke:#72577f;stroke-width:4;opacity:.72}
+    </style>
+  </defs>
+  <image href="Swedish refugee intake.jpg" width="549" height="794" preserveAspectRatio="none"/>
+  <rect width="549" height="794" fill="#f5eddb" opacity=".035"/>
+  <rect class="paper" x="16" y="21" width="330" height="205" rx="0" fill-opacity="0.94"/>
+  <rect class="paper" x="18" y="225" width="505" height="500" rx="0" fill-opacity="0.94"/>
+  <text class="serif" x="22" y="44" font-size="8.8">ROYAL SOCIAL BOARD</text>
+  <text class="serif" x="22" y="57" font-size="6.8">FOREIGN NATIONALS BUREAU · STOCKHOLM</text>
+  <text class="serif" x="274" y="137" font-size="15" font-weight="700" text-anchor="middle" letter-spacing="2">APPLICATION FOR AN ALIEN'S PASSPORT</text>
+  <text class="serif" x="274" y="164" font-size="10.5" font-style="italic" text-anchor="middle">To the Royal Social Board</text>
+  <text class="serif" x="22" y="211" font-size="9.5">The undersigned applies for an alien's passport and its certification.</text>
+  <text class="serif" x="22" y="254" font-size="9.2">Surname</text><line class="fine" x1="150" y1="256" x2="510" y2="256"/><text class="hand" x="166" y="252" font-size="14.5">Bachrach</text>
+<text class="serif" x="22" y="285" font-size="9.2">First name</text><line class="fine" x1="150" y1="287" x2="510" y2="287"/><text class="hand" x="166" y="283" font-size="14.5">Samuel</text>
+<text class="serif" x="22" y="316" font-size="9.2">Born</text><line class="fine" x1="150" y1="318" x2="510" y2="318"/><text class="hand" x="166" y="314" font-size="14.5">17 March 1890</text>
+<text class="serif" x="22" y="347" font-size="9.2">Place of birth</text><line class="fine" x1="150" y1="349" x2="510" y2="349"/><text class="hand" x="166" y="345" font-size="14.5">Frielendorf, Germany</text>
+<text class="serif" x="22" y="378" font-size="9.2">Current nationality</text><line class="fine" x1="150" y1="380" x2="510" y2="380"/><text class="hand" x="166" y="376" font-size="14.5">Stateless</text>
+<text class="serif" x="22" y="409" font-size="9.2">Former nationality</text><line class="fine" x1="150" y1="411" x2="510" y2="411"/><text class="hand" x="166" y="407" font-size="14.5">German</text>
+<text class="serif" x="22" y="440" font-size="9.2">Father</text><line class="fine" x1="150" y1="442" x2="510" y2="442"/><text class="hand" x="166" y="438" font-size="14.5">Jacob Bachrach</text>
+<text class="serif" x="22" y="471" font-size="9.2">Mother</text><line class="fine" x1="150" y1="473" x2="510" y2="473"/><text class="hand" x="166" y="469" font-size="14.5">Auguste, née Steinfeld</text>
+<text class="serif" x="22" y="502" font-size="9.2">Occupation</text><line class="fine" x1="150" y1="504" x2="510" y2="504"/><text class="hand" x="166" y="500" font-size="14.5">Merchant</text>
+<text class="serif" x="22" y="533" font-size="9.2">Marital status</text><line class="fine" x1="150" y1="535" x2="510" y2="535"/><text class="hand" x="166" y="531" font-size="14.5">Widower</text>
+<text class="serif" x="22" y="564" font-size="9.2">Current residence</text><line class="fine" x1="150" y1="566" x2="510" y2="566"/><text class="hand" x="166" y="562" font-size="14.5">Malmö</text>
+<text class="serif" x="22" y="595" font-size="9.2">In Sweden since</text><line class="fine" x1="150" y1="597" x2="510" y2="597"/><text class="hand" x="166" y="593" font-size="14.5">5 October 1943</text>
+<text class="serif" x="22" y="626" font-size="9.2">Entered through</text><line class="fine" x1="150" y1="628" x2="510" y2="628"/><text class="hand" x="166" y="624" font-size="14.5">Helsingborg</text>
+<text class="serif" x="22" y="657" font-size="9.2">Reason for stay</text><line class="fine" x1="150" y1="659" x2="510" y2="659"/><text class="hand" x="166" y="655" font-size="14.5">Refugee</text>
+  <line class="fine" x1="20" y1="712" x2="510" y2="712"/>
+  <text class="serif" x="22" y="746" font-size="7.2">Form received by the Royal Social Board · October 1943</text>
+</svg>
