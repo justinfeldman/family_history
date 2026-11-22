@@ -411,21 +411,18 @@ function renderRestitutionTable(item) {
   eyebrow.className = "eyebrow";
   eyebrow.textContent = "Restitution at a glance";
   const title = document.createElement("h3");
+  title.id = "compensation-awards-title";
   title.textContent = item.title;
-  const intro = document.createElement("p");
-  intro.textContent = item.intro;
-  header.append(eyebrow, title, intro);
+  header.append(eyebrow, title);
 
-  const scroller = document.createElement("div");
-  scroller.className = "restitution-table-scroll";
-  scroller.tabIndex = 0;
-  scroller.setAttribute("aria-label", "Confirmed compensation awards table");
-
+  const frame = document.createElement("div");
+  frame.className = "restitution-table-frame";
   const table = document.createElement("table");
   table.className = "restitution-table";
+  table.setAttribute("aria-labelledby", title.id);
   const head = document.createElement("thead");
   const headRow = document.createElement("tr");
-  const columnLabels = ["Recipient", "Award year", "Basis", "Amount at the time", "Approx. 2026 USD"];
+  const columnLabels = ["Recipient", "Award year", "Basis", "Amount (DM and 2026 USD)"];
   columnLabels.forEach(label => {
     const cell = document.createElement("th");
     cell.scope = "col";
@@ -442,18 +439,28 @@ function renderRestitutionTable(item) {
     recipient.scope = "row";
     recipient.textContent = row.recipient;
     tr.append(recipient);
-    [row.year, row.basis, row.dm, row.usd].forEach((value, index) => {
+    [row.year, row.basis].forEach((value, index) => {
       const cell = document.createElement("td");
       cell.textContent = value;
       cell.dataset.label = columnLabels[index + 1];
       tr.append(cell);
     });
+    const amount = document.createElement("td");
+    amount.dataset.label = columnLabels[3];
+    const values = document.createElement("div");
+    const dm = document.createElement("strong");
+    dm.textContent = row.dm;
+    const usd = document.createElement("span");
+    usd.textContent = row.usd;
+    values.append(dm, usd);
+    amount.append(values);
+    tr.append(amount);
     body.append(tr);
   });
   table.append(head, body);
-  scroller.append(table);
+  frame.append(table);
 
-  section.append(header, scroller);
+  section.append(header, frame);
   return section;
 }
 

@@ -90,7 +90,6 @@
 .record-list span, .related { font: 15px/1.45 var(--archive-sans); color: var(--archive-muted); }
 .section-foot { padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
 .archive-section .context-wide { width: 100%; max-width: 100%; margin: 20px 0; left: auto; transform: none; }
-.archive-section .restitution-table-scroll { overflow-x: auto; }
 @media(max-width: 700px) {
   .mast-inner { display: block; padding: 10px 20px 5px; }
   .archive-brand span { width: 31px; height: 31px; }

@@ -527,7 +527,7 @@ window.contentData = {
       "content": [
         {
           "type": "text",
-          "text": "Samuel and Ilse returned to Copenhagen in 1945. Shortly after their return, Samuel and Bertha finalized their divorce."
+          "text": "After about a year and a half in Sweden, Samuel and Ilse returned to Copenhagen in 1945. Shortly after their return, Samuel and Bertha finalized their divorce."
         },
         {
           "type": "image_placeholder",
@@ -650,7 +650,6 @@ window.contentData = {
         {
           "type": "restitution_table",
           "title": "Confirmed compensation awards",
-          "intro": "The surviving decisions establish the following payments to Margot, Samuel, and the four Baum heirs. Bertha Loewinger filed Anschel's claim, but the award belonged jointly to Bertha, Ludwig Baum, Ernst Baum, and Betty Jane Skipper.",
           "rows": [
             {
               "recipient": "Margot Rosenblum, née Bachrach",

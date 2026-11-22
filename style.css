@@ -395,33 +395,21 @@ h1 {
 }
 
 .restitution-heading {
-  display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(280px, 1.2fr);
-  gap: 8px 44px;
-  align-items: end;
-  margin-bottom: 28px;
+  container-type: inline-size;
+  margin-bottom: 20px;
 }
 
-.restitution-heading .eyebrow { grid-column: 1 / -1; margin-bottom: 4px; }
+.restitution-heading .eyebrow { margin: 0 0 6px; }
 
 .restitution-heading h3 {
   margin: 0;
-  font-size: clamp(30px, 3.5vw, 48px);
+  font-size: clamp(16px, 6.5cqi, 40px);
   font-weight: 500;
   letter-spacing: -.035em;
   line-height: 1.08;
 }
 
-.restitution-heading > p:last-child {
-  margin: 0;
-  color: var(--ink-soft);
-  font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.55;
-}
-
-.restitution-table-scroll {
-  overflow-x: auto;
+.restitution-table-frame {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
@@ -429,7 +417,8 @@ h1 {
 
 .restitution-table {
   width: 100%;
-  min-width: 860px;
+  table-layout: fixed;
+  overflow-wrap: anywhere;
   border-collapse: collapse;
   font-family: var(--sans);
   font-size: 14px;
@@ -438,7 +427,7 @@ h1 {
 
 .restitution-table th,
 .restitution-table td {
-  padding: 15px 16px;
+  padding: 12px 10px;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
@@ -453,11 +442,12 @@ h1 {
   text-transform: uppercase;
 }
 
-.restitution-table tbody th { width: 18%; font-weight: 700; }
-.restitution-table td:nth-child(2) { width: 17%; }
-.restitution-table td:nth-child(3) { width: 31%; }
-.restitution-table td:nth-child(4),
-.restitution-table td:nth-child(5) { width: 17%; font-variant-numeric: tabular-nums; }
+.restitution-table thead th:nth-child(1) { width: 23%; }
+.restitution-table thead th:nth-child(2) { width: 19%; }
+.restitution-table thead th:nth-child(4) { width: 25%; }
+.restitution-table tbody th { font-weight: 700; }
+.restitution-table td:last-child { font-variant-numeric: tabular-nums; }
+.restitution-table td:last-child span { display: block; margin-top: 2px; }
 .restitution-table tbody tr:last-child > * { border-bottom: 0; }
 .restitution-table tbody tr:not(.restitution-total):hover { background: #f8f4ec; }
 
@@ -1405,7 +1395,6 @@ dialog::backdrop { background: rgba(25, 23, 20, .68); backdrop-filter: blur(5px)
   .context-block-heading { grid-template-columns: 1fr; gap: 18px; }
   .ancestry-map-layout { grid-template-columns: minmax(0, 470px) minmax(240px, 1fr); }
   .historical-sources { grid-template-columns: 1fr; gap: 28px; }
-  .restitution-heading { grid-template-columns: 1fr; gap: 14px; }
 }
 
 @media (max-width: 700px) {
@@ -1447,8 +1436,8 @@ dialog::backdrop { background: rgba(25, 23, 20, .68); backdrop-filter: blur(5px)
   .cohort-grid { grid-template-columns: repeat(auto-fill, 26px); gap: 7px; }
   .cohort-child { width: 26px; height: 26px; line-height: 26px; }
   .restitution-summary { padding: 24px 18px; }
-  .restitution-table-scroll { overflow: visible; border: 0; background: transparent; }
-  .restitution-table { min-width: 0; font-size: 13px; }
+  .restitution-table-frame { border: 0; background: transparent; }
+  .restitution-table { font-size: 13px; }
   .restitution-table thead {
     position: absolute;
     width: 1px;
@@ -1480,7 +1469,7 @@ dialog::backdrop { background: rgba(25, 23, 20, .68); backdrop-filter: blur(5px)
   }
   .restitution-table td {
     display: grid;
-    grid-template-columns: minmax(105px, .42fr) 1fr;
+    grid-template-columns: minmax(0, .42fr) minmax(0, 1fr);
     gap: 12px;
     padding: 12px 15px;
   }
