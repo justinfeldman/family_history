@@ -338,21 +338,21 @@ const compensationAwards = {
       "usd": "about $1,740 per month"
     },
     {
-      "recipient": "Bertha Loewinger, Ludwig Baum, Ernst Baum & Betty Jane Skipper",
+      "recipient": "Bertha Loewinger, Ludwig Baum, Ernst Baum & Betty Jane Shipper",
       "year": "1959",
       "basis": "Damage to professional and economic advancement in his independent business, 1933–38",
       "dm": "4,380 DM",
       "usd": "about $14,300"
     },
     {
-      "recipient": "Bertha Loewinger, Ludwig Baum, Ernst Baum & Betty Jane Skipper",
+      "recipient": "Bertha Loewinger, Ludwig Baum, Ernst Baum & Betty Jane Shipper",
       "year": "1959",
       "basis": "Emigration expenses",
       "dm": "1,223.84 DM",
       "usd": "about $4,000"
     },
     {
-      "recipient": "Bertha Loewinger, Ludwig Baum, Ernst Baum & Betty Jane Skipper",
+      "recipient": "Bertha Loewinger, Ludwig Baum, Ernst Baum & Betty Jane Shipper",
       "year": "1960",
       "basis": "Household goods and personal property sold under persecution",
       "dm": "2,000 DM",
